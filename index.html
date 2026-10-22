@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>9618 Nov 2023 - Question 3 Revision Portal</title>
+    <title>9618 Nov 2023 - Complete Practical Exam Revision Portal</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #C5F40B;
             color: #333;
-            max-width: 1400px;
+            max-width: 1450px;
             margin: 20px auto;
             padding: 20px;
             text-align: center;
@@ -24,18 +24,38 @@
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+        
+        /* Three Dropdown Selectors Bar */
         .selector-section {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .dropdown-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            min-width: 320px;
+        }
+        .dropdown-group label {
+            font-weight: bold;
+            font-size: 13px;
+            color: #2c3e50;
+            margin-bottom: 5px;
         }
         select {
-            padding: 10px 16px;
-            font-size: 16px;
+            padding: 10px 12px;
+            font-size: 14px;
             font-weight: bold;
-            width: 600px;
+            width: 100%;
             background-color: #fff;
             border: 1px solid #ccc;
             border-radius: 5px;
             cursor: pointer;
+            box-sizing: border-box;
         }
 
         /* Perfectly Aligned Split Screen Grid Layout */
@@ -135,23 +155,47 @@
 
     <div class="container">
         <h1>9618 Practical Exam Practice Portal</h1>
-        <p>Cambridge International AS & A Level Computer Science - November 2023 (Question 3 Suite)</p>
+        <p>Cambridge International AS & A Level Computer Science - November 2023 (Complete Paper 4 Suite)</p>
 
-        <!-- Page Dropdown Selector -->
+        <!-- Three Dropdown Selectors at the Top -->
         <div class="selector-section">
-            <select id="examDropdown" onchange="loadExamSession()">
-                <option value="page-1">November 2023 - Q3 (Page 1: Character Class & Attributes)</option>
-                <option value="page-2">November 2023 - Q3 (Page 2: Methods & Getters)</option>
-                <option value="page-3">November 2023 - Q3 (Page 3: MagicCharacter Subclass)</option>
-                <option value="page-4">November 2023 - Q3 (Page 4: Main Program & Testing)</option>
-            </select>
+            <div class="dropdown-group">
+                <label>📌 Question 1 (Stacks & File Handling)</label>
+                <select id="q1Dropdown" onchange="loadSelectedPage('q1')">
+                    <option value="" disabled selected>-- Select Question 1 Page --</option>
+                    <option value="q1-p1">Page 1: Global Arrays & Pointers Declaration</option>
+                    <option value="q1-p2">Page 2: PushData(), ReadData(), & Pop Functions</option>
+                    <option value="q1-p3">Page 3: Main Program Execution & Testing</option>
+                </select>
+            </div>
+
+            <div class="dropdown-group">
+                <label>📌 Question 2 (Iteration & Recursion)</label>
+                <select id="q2Dropdown" onchange="loadSelectedPage('q2')">
+                    <option value="" disabled selected>-- Select Question 2 Page --</option>
+                    <option value="q2-p1">Page 1: Divisors & IterativeCalculate() Logic</option>
+                    <option value="q2-p2">Page 2: Iterative Code & RecursiveValue() Setup</option>
+                    <option value="q2-p3">Page 3: Complete Recursive Function & Testing</option>
+                </select>
+            </div>
+
+            <div class="dropdown-group">
+                <label>📌 Question 3 (Object-Oriented Programming)</label>
+                <select id="q3Dropdown" onchange="loadSelectedPage('q3')">
+                    <option value="" disabled selected>-- Select Question 3 Page --</option>
+                    <option value="q3-p1">Page 1: Base Character Class & Attributes</option>
+                    <option value="q3-p2">Page 2: Getters, Setters, & Learn Method</option>
+                    <option value="q3-p3">Page 3: MagicCharacter Subclass & Overriding</option>
+                    <option value="q3-p4">Page 4: Main Program Testing & Polymorphism</option>
+                </select>
+            </div>
         </div>
 
         <!-- Side-by-Side Display: Page Preview vs Python Code -->
         <div class="exam-grid">
             <!-- Left Pane: Visual Page Screenshot -->
             <div class="exam-panel">
-                <h3 id="panelTitle">📄 Question 3 - Page 1</h3>
+                <h3 id="panelTitle">📄 Exam Paper Page</h3>
                 <div id="imageGalleryOutput" class="image-gallery-box">
                     <!-- Dynamic screenshot loads here -->
                 </div>
@@ -168,15 +212,180 @@
         <div class="reminder-box" id="reminderBox">
             <h4>💡 Student Exam Reminders:</h4>
             <ul>
-                <li>Always declare private attributes using double underscores (`self.__attribute`).</li>
-                <li>Include attribute type comments above constructors for full marks.</li>
+                <li><b>Global Arrays:</b> Declare global variables and array type comments clearly using `#` for Python.</li>
+                <li><b>OOP Inheritance:</b> Always remember `super().__init__(...)` when initializing subclasses.</li>
+                <li><b>Recursion:</b> Ensure your base case (termination condition) is written first to prevent infinite loops.</li>
             </ul>
         </div>
     </div>
 
     <script>
         const examData = {
-            "page-1": {
+            // --- QUESTION 1 ---
+            "q1-p1": {
+                title: "📄 Question 1 - Page 1",
+                image: "N23_q1_pg1.PNG",
+                code: `# ==========================================
+# Script for November 2023 - Paper 42 (Q1 - Page 1)
+# ==========================================
+
+# Script for Question 1.a.i: Global 1D Arrays Declaration
+StackVowel = [""] * 100
+StackConsonant = [""] * 100
+
+# Script for Question 1.a.ii: Global Pointers Declaration & Initialization
+VowelTop = 0
+ConsonantTop = 0`
+            },
+            "q1-p2": {
+                title: "📄 Question 1 - Page 2",
+                image: "N23_q1_pg2.PNG",
+                code: `# ==========================================
+# Script for November 2023 - Paper 42 (Q1 - Page 2)
+# ==========================================
+
+# Script for Question 1.b.i: PushData Procedure
+def PushData(letter: str):
+    global VowelTop, ConsonantTop, StackVowel, StackConsonant
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    if letter.lower() in vowels:
+        if VowelTop < 100:
+            StackVowel[VowelTop] = letter
+            VowelTop += 1
+        else:
+            print("Vowel stack is full.")
+    else:
+        if ConsonantTop < 100:
+            StackConsonant[ConsonantTop] = letter
+            ConsonantTop += 1
+        else:
+            print("Consonant stack is full.")
+
+# Script for Question 1.b.ii: ReadData Procedure with Exception Handling
+def ReadData():
+    try:
+        with open("StackData.txt", "r") as file:
+            for line in file:
+                letter = line.strip()
+                if letter != "":
+                    PushData(letter)
+    except FileNotFoundError:
+        print("Error: StackData.txt file not found.")
+
+# Script for Question 1.c: Pop Functions
+def PopVowel() -> str:
+    global VowelTop, StackVowel
+    if VowelTop == 0:
+        return "No data"
+    else:
+        VowelTop -= 1
+        return StackVowel[VowelTop]
+
+def PopConsonant() -> str:
+    global ConsonantTop, StackConsonant
+    if ConsonantTop == 0:
+        return "No data"
+    else:
+        ConsonantTop -= 1
+        return StackConsonant[ConsonantTop]`
+            },
+            "q1-p3": {
+                title: "📄 Question 1 - Page 3",
+                image: "N23_q1_pg3.PNG",
+                code: `# ==========================================
+# Script for November 2023 - Paper 42 (Q1 - Page 3)
+# ==========================================
+
+# Script for Question 1.d.i & 1.d.ii: Main Program Execution
+if __name__ == "__main__":
+    ReadData()
+    result = ""
+    count = 0
+    
+    while count < 5:
+        choice = input("Enter choice (vowel or consonant): ").strip().lower()
+        if choice == "vowel":
+            val = PopVowel()
+            result += val
+            count += 1
+        elif choice == "consonant":
+            val = PopConsonant()
+            result += val
+            count += 1
+        else:
+            print("Invalid choice. Please type 'vowel' or 'consonant'.")
+            
+    print("Final Output:", result)`
+            },
+
+            // --- QUESTION 2 ---
+            "q2-p1": {
+                title: "📄 Question 2 - Page 1",
+                image: "N23_q2_pg1.PNG",
+                code: `# ==========================================
+# Script for November 2023 - Paper 42 (Q2 - Page 1)
+# ==========================================
+
+# Reference Pseudocode for IterativeCalculate()
+# FUNCTION IterativeCalculate(Number : INTEGER) RETURNS INTEGER
+#     DECLARE Total : Integer
+#     DECLARE ToFind : Integer
+#     ToFind <- Number
+#     Total <- 0
+#     WHILE Number <> 0
+#         IF ToFind MODULUS Number = 0 THEN
+#             Total <- Total + Number
+#         ENDIF
+#         Number <- Number - 1
+#     ENDWHILE
+#     RETURN Total
+# ENDFUNCTION`
+            },
+            "q2-p2": {
+                title: "📄 Question 2 - Page 2",
+                image: "N23_q2_pg2.PNG",
+                code: `# ==========================================
+# Script for November 2023 - Paper 42 (Q2 - Page 2)
+# ==========================================
+
+# Script for Question 2.a.i: IterativeCalculate Function
+def IterativeCalculate(Number: int) -> int:
+    Total = 0
+    ToFind = Number
+    while Number != 0:
+        if ToFind % Number == 0:
+            Total += Number
+        Number -= 1
+    return Total
+
+# Script for Question 2.a.ii & 2.a.iii: Main Program Test Call
+if __name__ == "__main__":
+    print("IterativeCalculate(10) Result:", IterativeCalculate(10))`
+            },
+            "q2-p3": {
+                title: "📄 Question 2 - Page 3",
+                image: "N23_q2_pg3.PNG",
+                code: `# ==========================================
+# Script for November 2023 - Paper 42 (Q2 - Page 3)
+# ==========================================
+
+# Script for Question 2.b.i: RecursiveValue Function
+def RecursiveValue(Number: int, ToFind: int) -> int:
+    if Number == 0:
+        return 0
+    else:
+        if ToFind % Number == 0:
+            return Number + RecursiveValue(Number - 1, ToFind)
+        else:
+            return RecursiveValue(Number - 1, ToFind)
+
+# Script for Question 2.b.ii & 2.b.iii: Main Program Recursive Test Call
+if __name__ == "__main__":
+    print("RecursiveValue(50, 50) Result:", RecursiveValue(50, 50))`
+            },
+
+            // --- QUESTION 3 ---
+            "q3-p1": {
                 title: "📄 Question 3 - Page 1",
                 image: "N23_q3_pg1.PNG",
                 code: `# ==========================================
@@ -197,7 +406,7 @@ class Character:
         self.__Intelligence = intel
         self.__Speed = speed`
             },
-            "page-2": {
+            "q3-p2": {
                 title: "📄 Question 3 - Page 2",
                 image: "N23_q3_pg2.PNG",
                 code: `# ==========================================
@@ -214,11 +423,11 @@ class Character:
     def SetIntelligence(self, intel: float):
         self.__Intelligence = intel
 
-    # Script for Question 3.a.iv: Learn Method (Increases Intelligence by 10%)
+    # Script for Question 3.a.iv: Learn Method
     def Learn(self):
         self.__Intelligence *= 1.10`
             },
-            "page-3": {
+            "q3-p3": {
                 title: "📄 Question 3 - Page 3",
                 image: "N23_q3_pg3.PNG",
                 code: `# ==========================================
@@ -244,7 +453,7 @@ class MagicCharacter(Character):
         else:
             self.SetIntelligence(current_intel * 1.10)`
             },
-            "page-4": {
+            "q3-p4": {
                 title: "📄 Question 3 - Page 4",
                 image: "N23_q3_pg4.PNG",
                 code: `# ==========================================
@@ -253,36 +462,53 @@ class MagicCharacter(Character):
 
 # Script for Question 3.c & 3.d: Main Program Testing & Polymorphism
 if __name__ == "__main__":
-    # Instantiate a standard Character object and test Learn
     standard_char = Character("Ali", "12/05/2005", 80.0, 60)
     standard_char.Learn()
     print(f"Standard Character Intelligence: {standard_char.GetIntelligence()}")
 
-    # Instantiate a MagicCharacter object and test overridden Learn
     magic_char = MagicCharacter("Fire", "Zack", "20/11/2004", 90.0, 70)
     magic_char.Learn()
     print(f"Magic Character Intelligence: {magic_char.GetIntelligence()}")`
             }
         };
 
-        function loadExamSession() {
-            const selected = document.getElementById("examDropdown").value;
-            const data = examData[selected];
+        function loadSelectedPage(questionKey) {
+            let selectedValue = "";
             
+            // Determine which dropdown was used and reset the other two for clarity
+            if (questionKey === 'q1') {
+                selectedValue = document.getElementById("q1Dropdown").value;
+                document.getElementById("q2Dropdown").selectedIndex = 0;
+                document.getElementById("q3Dropdown").selectedIndex = 0;
+            } else if (questionKey === 'q2') {
+                selectedValue = document.getElementById("q2Dropdown").value;
+                document.getElementById("q1Dropdown").selectedIndex = 0;
+                document.getElementById("q3Dropdown").selectedIndex = 0;
+            } else if (questionKey === 'q3') {
+                selectedValue = document.getElementById("q3Dropdown").value;
+                document.getElementById("q1Dropdown").selectedIndex = 0;
+                document.getElementById("q2Dropdown").selectedIndex = 0;
+            }
+
+            const data = examData[selectedValue];
+            if (!data) return;
+
             document.getElementById("panelTitle").innerText = data.title;
             document.getElementById("pythonCodeOutput").innerText = data.code;
 
             const galleryBox = document.getElementById("imageGalleryOutput");
             galleryBox.innerHTML = ""; 
             
-            // Load the exact PNG image matching the selected page
             const img = document.createElement("img");
             img.src = data.image;
             galleryBox.appendChild(img);
         }
 
-        // Initialize default view on load
-        window.onload = loadExamSession;
+        // Default load on startup: Show Question 3 Page 1
+        window.onload = function() {
+            document.getElementById("q3Dropdown").value = "q3-p1";
+            loadSelectedPage('q3');
+        };
     </script>
 
 </body>
